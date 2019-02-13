@@ -88,6 +88,7 @@ describe('mooc_git-entrega3_rebase2', function () {
             this.msg_err = error_critical;
             should.not.exist(error_critical);
         } else {
+			mygit.checkout(BRANCH_NAME);
             [error_log, log] = await to(mygit.log());
             if (error_log) {
                 this.msg_err = `Error reading logs from ${REPO_URL}`;
